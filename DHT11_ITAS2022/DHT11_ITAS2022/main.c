@@ -68,7 +68,7 @@ setDataDirection(DHT11RX);
 int main(void)
 {
 initDHT11();
-    /* Replace with your application code */
+    /* Zweiter Replace with your application code */
     while (1) 
     {
 	startDHT11();
