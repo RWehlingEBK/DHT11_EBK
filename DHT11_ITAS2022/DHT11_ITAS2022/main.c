@@ -1,7 +1,11 @@
 /*
  * DHT11_ITAS2022.c
  *
+<<<<<<< Updated upstream
  * Created: 11.02.2022 3. Versuch
+=======
+ * Created: 11.02.2022 3.Versuch
+>>>>>>> Stashed changes
  * Author : RalfW
  */ 
 
