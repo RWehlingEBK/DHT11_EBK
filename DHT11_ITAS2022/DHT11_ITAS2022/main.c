@@ -1,7 +1,7 @@
 /*
  * DHT11_ITAS2022.c
  *
- * Created: 11.02.2022
+ * Created: 11.02.2022 1
  * Author : RalfW
  */ 
 
