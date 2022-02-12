@@ -19,8 +19,14 @@
 #define DHT11PWR	PINB5
 #define DHT11DATA	PINB6
 
-#define DHT11DEBUG0	PINB0
-#define DHT11DEBUG1	PINB1
+//Zum Debuggen welche Daten empfangen werden
+#define DEBUGPORT	PORTD
+#define DEBUGDDR	DDRD
+#define DEBUGPIN	PIND
+
+#define DEBUG_RESPONSE	PINB0
+#define DEBUG_0			PINB1
+#define DEBUG_1			PINB2
 
 
 #define DHT11TX	1
@@ -38,16 +44,17 @@ DHT11DDR =(1<<DHT11PWR);
 DHT11PORT=(1<<DHT11PWR); 	
 }
 
+//Damit ich erkennen kann welche Daten empfangen wurden
 void initDHT11Debug()
 {
 	//Datenrichtung setzen
-	DHT11DDR =(1<<DHT11DEBUG0) | (1<<DHT11DEBUG1);
+	DHT11DDR =(1<<DEBUG_RESPONSE) | (1<<DEBUG_0) | (1<<DEBUG_1);
 	//Pin auf 5V schalten mit dem Port Register
 }
 
 void DHT11DebugToggle (uint8_t val)
 {
-DHT11PIN =val?(1<<DHT11DEBUG1):(1<<DHT11DEBUG0);	
+DHT11PIN =val?(1<<DEBUG_1):(1<<DEBUG_0);	
 };
 
 
@@ -76,19 +83,18 @@ void setDatapin(uint8_t high)
 
 void startDHT11()
 {
-
 setDataDirection(DHT11TX);
 setDatapin(DHT11LOW);
 _delay_us(18000);
 setDatapin(DHT11HIGH);
 setDataDirection(DHT11RX);
-	
 }
 
 
 int main(void)
 {
 initDHT11();
+
 initDHT11Debug();
     /* Replace with your application code */
     while (1) 
