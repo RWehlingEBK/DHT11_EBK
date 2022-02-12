@@ -1,12 +1,13 @@
 /*
  * DHT11_ITAS2022.c
  *
+ * Created: 17.01.2022 08:18:37
+ * Author : RalfW
 <<<<<<< Updated upstream
  * Created: 11.02.2022 4. Versuch
 =======
  * Created: 11.02.2022 4.Versuch
 >>>>>>> Stashed changes
- * Author : RalfW
  */ 
 
 #include <avr/io.h>
@@ -29,6 +30,29 @@
 
 #define DHT11HIGH		1
 #define DHT11LOW		2
+
+<<<<<<< Debug12022022
+#define DHT11HIGH 1
+#define DHT11LOW  0
+
+//###############################################################
+//Zum Debuggen
+#define DEBUGPORT	PORTD
+#define DEBUGDDR	DDRD
+#define DEBUGPIN	PIND
+
+#define DEBUG_RESPONSE	PINB0
+#define DEBUG_0			PINB1
+#define DEBUG_1			PINB2
+//###############################################################
+=======
+#define DEBUG_RESPONSE	0
+#define DHT11DEBUG0	    1
+#define DHT11DEBUG1	    2
+
+#define DHT11HIGH		1
+#define DHT11LOW		2
+>>>>>>> Release
 
 
 void initDHT11()
@@ -98,5 +122,3 @@ initDHT11Debug();
 	_delay_ms(500);
     }
 }
-
-
