@@ -19,7 +19,15 @@
 #define DHT11PWR	PINB5
 #define DHT11DATA	PINB6
 
-//Zum Debuggen welche Daten empfangen werden
+
+#define DHT11TX	1
+#define DHT11RX	0
+
+#define DHT11HIGH 1
+#define DHT11LOW  0
+
+//###############################################################
+//Zum Debuggen
 #define DEBUGPORT	PORTD
 #define DEBUGDDR	DDRD
 #define DEBUGPIN	PIND
@@ -27,13 +35,7 @@
 #define DEBUG_RESPONSE	PINB0
 #define DEBUG_0			PINB1
 #define DEBUG_1			PINB2
-
-
-#define DHT11TX	1
-#define DHT11RX	0
-
-#define DHT11HIGH 1
-#define DHT11LOW  0
+//###############################################################
 
 
 void initDHT11()
